@@ -29,7 +29,7 @@ the int is the total price of the output."""
 #totalprice = 0
 
 def getBestPrice(line):
-    r = requests.get("http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.12.0&SECURITY-APPNAME=BigWangG-bf74-456b-b2ab-74125859229c&RESPONSE-DATA-FORMAT=XML&REST-PAYLOAD&sortOrder=PricePlusShippingLowest&keywords="+line+"&paginationInput.entriesPerPage=1&itemFilter(0).name=ListingType&itemFilter(0).value(0)=FixedPrice&itemFilter(0).value(1)=AuctionWithBIN""")
+    r = requests.get("http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.12.0&SECURITY-APPNAME="insertappkeyhere"&RESPONSE-DATA-FORMAT=XML&REST-PAYLOAD&sortOrder=PricePlusShippingLowest&keywords="+line+"&paginationInput.entriesPerPage=1&itemFilter(0).name=ListingType&itemFilter(0).value(0)=FixedPrice&itemFilter(0).value(1)=AuctionWithBIN""")
     tree = ET.fromstring(r.text.encode('ascii', 'ignore'))
     asdf=tree.find(".//{http://www.ebay.com/marketplace/search/v1/services}buyItNowAvailable")
     try:
