@@ -1,5 +1,4 @@
 #!/usr/bin/python  
-# Hello World from Python
 import pickle
 import requests
 import sys
